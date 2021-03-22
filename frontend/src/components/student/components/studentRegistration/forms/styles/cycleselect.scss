@@ -1,0 +1,22 @@
+@import "../../../../styles/variables.scss";
+
+.cycleselect {
+	select {
+		border-radius: 0;
+		border-color: $primary-color;
+		color: $primary-color;
+		padding: 5px;
+		box-shadow: $box-shadow;
+		background-color: $white;
+		border-radius: $border-radius;
+		font-family: "Montserrat", sans-serif !important;
+		cursor: pointer;
+	}
+	option {
+		cursor: pointer;
+	}
+
+	select:focus {
+		outline: none;
+	}
+}

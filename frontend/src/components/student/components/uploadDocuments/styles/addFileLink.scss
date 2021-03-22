@@ -1,0 +1,15 @@
+@import "../../../../../styles/variables.scss";
+
+.addFileLink {
+	display: flex;
+	align-items: center;
+	color: $primary-color;
+	cursor: pointer;
+	position: relative;
+	.icon {
+		font-size: 0.8rem;
+	}
+	span {
+		font-size: 0.8rem;
+	}
+}

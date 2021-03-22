@@ -1,0 +1,25 @@
+@import "../../../styles/variables.scss";
+
+.student {
+	display: flex;
+	justify-content: space-between;
+
+	&__content {
+		background-color: $white;
+		padding: $space/2;
+		border-radius: $border-radius;
+		box-shadow: $box-shadow;
+		width: 68vw;
+
+		a {
+			color: $primary-color;
+		}
+
+		.MuiBox-root {
+			padding: 15px 1px !important;
+		}
+	}
+	&__menu {
+		height: 450px;
+	}
+}

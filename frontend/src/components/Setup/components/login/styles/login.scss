@@ -1,0 +1,62 @@
+@import "../../../../../styles/variables.scss";
+
+.login {
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    display: flex;
+    align-items: center;
+
+    .header__text {
+      margin-left: 22%;
+      margin-right: auto;
+      p {
+        opacity: 0.5;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+
+  &__form {
+    margin-top: $space;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: $white;
+      padding: $space * 2 $space * 1.5;
+      justify-content: center;
+      box-shadow: $box-shadow;
+      border-radius: $border-radius;
+      border: $border;
+
+      input {
+        // width: 250px;
+        // height: 15px;
+        border-radius: $border-radius;
+      }
+
+      .form__error {
+        width: 275px;
+        margin-bottom: $space * 0.5;
+      }
+
+      .form__1 {
+      }
+
+      .form__2 {
+        margin-top: $space * 1.25;
+      }
+      .form__3 {
+        margin-top: $space * 2;
+      }
+    }
+  }
+}

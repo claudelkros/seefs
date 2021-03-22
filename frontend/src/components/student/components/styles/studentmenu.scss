@@ -1,0 +1,12 @@
+@import "../../../../styles/variables.scss";
+
+.studentMenu {
+	display: flex;
+	flex-direction: column;
+	align-content: space-between;
+	align-items: center;
+
+	&__register {
+		padding-top: 400px;
+	}
+}

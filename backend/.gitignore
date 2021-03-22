@@ -1,0 +1,9 @@
+node_modules
+config
+.env
+Task.md
+frontend/public/uploads
+frontend/.eslintcache
+example.todo.md
+template.todo
+Tasks.todo

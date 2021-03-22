@@ -1,0 +1,16 @@
+@import "../../../styles/variables.scss";
+
+.home {
+  display: flex;
+  justify-content: space-between;
+  &__content {
+  }
+  &__upload {
+    background-color: $white;
+    padding: $space;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    //width: 200px;
+  }
+}
+//

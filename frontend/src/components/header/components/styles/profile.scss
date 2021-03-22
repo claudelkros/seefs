@@ -1,0 +1,52 @@
+@import "../../../../styles/variables.scss";
+
+.profile {
+  background-color: $primary-color;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: $box-shadow;
+  border: 1px solid $primary-color;
+  font-weight: 400;
+  position: relative;
+  cursor: pointer;
+  z-index: 10;
+  &__content {
+    box-shadow: $box-shadow;
+    position: absolute;
+    top: 110%;
+    right: 0;
+    background-color: $white;
+    width: 185px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+
+    .content__item {
+      padding: 8px 0;
+      color: $secondary-color !important;
+      .item__wrapper {
+        display: flex;
+        align-items: center;
+        .icon {
+          font-size: 1rem;
+          margin-right: $icon-text-spacing * 2;
+        }
+        .first {
+          color: $primary-color;
+        }
+        .second {
+          color: brown;
+        }
+        .text--first {
+          color: $primary-color;
+        }
+        .text--second {
+          color: brown;
+        }
+      }
+    }
+  }
+}

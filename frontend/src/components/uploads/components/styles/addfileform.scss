@@ -1,0 +1,28 @@
+@import "../../../../styles/variables.scss";
+
+.addfileform {
+  &__bloc {
+    padding: 10px 0;
+    .bloc__text {
+      margin-bottom: 7px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    cursor: pointer;
+
+    input[type="file"] {
+      border: 1px solid $primary-color;
+      display: inline-block;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      border-radius: $border-radius;
+      font-size: 0.9rem !important;
+      font-family: "Montserrat" !important;
+      color: $primary-color;
+      width: 100%;
+    }
+    input[type="file" i] {
+    }
+  }
+}

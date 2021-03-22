@@ -1,0 +1,64 @@
+@import "../../../styles/variables.scss";
+
+.fileUpload {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 250px;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .header__text {
+      font-weight: 600;
+      opacity: 0.5;
+    }
+
+    .header__date {
+    }
+  }
+  &__content {
+    //background-color: #f1f1f1;
+    //margin-top: $space * 0.75;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: $border-radius;
+    margin-top: $space * 0.5;
+
+    .content__list {
+      padding: $space * 0.35;
+      position: relative;
+      font-size: 0.85rem;
+      overflow-y: scroll;
+      height: 250px;
+      background-color: rgb(243, 243, 243);
+      a {
+        color: $secondary-color;
+      }
+    }
+
+    .content__add {
+      position: relative;
+      cursor: pointer;
+      margin-top: $space * 0.35;
+      display: flex;
+      align-items: center;
+      color: $primary-color;
+      .addIcon {
+        font-size: $icon-size * 0.8;
+      }
+      span {
+        margin-left: $icon-text-spacing;
+      }
+    }
+  }
+
+  &__more {
+    visibility: hidden;
+    margin-top: $space * 0.75;
+    color: $primary-color;
+    align-self: center;
+    cursor: pointer;
+  }
+}

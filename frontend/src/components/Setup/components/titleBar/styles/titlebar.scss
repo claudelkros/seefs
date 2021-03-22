@@ -1,0 +1,24 @@
+@import "../../../../../styles/variables.scss";
+
+.titleBar {
+  display: flex;
+  justify-content: space-between;
+  &__text {
+    .text {
+      font-size: $heading-3;
+      font-weight: $weight-2;
+    }
+  }
+
+  &__hide {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: $primary-color;
+
+    .hide__text {
+    }
+    .hide__icon {
+    }
+  }
+}

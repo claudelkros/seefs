@@ -1,0 +1,17 @@
+@import "../../../../../styles/variables.scss";
+
+.choiceList {
+  margin-bottom: $space * 4;
+  position: relative;
+
+  &__title {
+  }
+
+  &__content {
+    width: 100%;
+    background-color: $white !important;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: $space;
+  }
+}

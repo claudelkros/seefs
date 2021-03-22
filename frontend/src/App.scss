@@ -1,0 +1,71 @@
+@import "./styles/variables.scss";
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+	.App {
+		display: grid;
+		grid-template-areas: "l d d d d d d d d d d d";
+
+		&__sidebar {
+			background-color: $primary-color;
+			height: 100vh;
+			grid-area: l;
+			width: 15vw;
+		}
+
+		&__content {
+			position: relative;
+			grid-area: d;
+			width: 85vw;
+			position: fixed;
+			left: 15vw;
+
+			.content__wrapper {
+				overflow: scroll;
+				.content__header {
+					z-index: 5;
+					background: $white;
+					position: fixed;
+					left: 15vw;
+					height: 10vh;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					width: 85vw;
+					box-shadow: $box-shadow;
+				}
+
+				.content__header::after {
+					position: absolute;
+					content: "";
+					bottom: 0;
+					width: 50%;
+					height: 1px;
+					background-color: $secondary-color;
+					opacity: 0.1;
+				}
+
+				.content__main {
+					margin-top: $space * 3;
+					padding: $space $space $space $space * 2;
+					height: 90vh;
+				}
+			}
+		}
+	}
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+}

@@ -1,0 +1,19 @@
+@import "../../../styles/variables.scss";
+
+.sidebar {
+  padding: $space;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+
+  &__logo {
+  }
+
+  &__content {
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

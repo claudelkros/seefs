@@ -1,0 +1,16 @@
+@import "../../../styles/variables.scss";
+
+.header {
+	padding: 0 $space * 2;
+	display: flex;
+	width: inherit;
+	justify-content: space-between;
+	align-items: center;
+
+	&__icons {
+		width: 100px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}

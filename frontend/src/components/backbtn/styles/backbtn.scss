@@ -1,0 +1,19 @@
+@import "../../../styles/variables.scss";
+
+.back {
+  display: flex;
+  align-items: center;
+  color: $primary-color;
+  cursor: pointer;
+
+  &__text {
+    p {
+      padding: 0;
+      margin: 0 $icon-text-spacing;
+    }
+  }
+
+  &__icon {
+    padding-top: $icon-text-spacing;
+  }
+}

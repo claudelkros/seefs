@@ -1,0 +1,30 @@
+@import "../../../../../styles/variables.scss";
+
+.choice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  .MuiFormControlLabel-root {
+    background-color: $white;
+    border: $border;
+    box-shadow: $box-shadow;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: $space/2 0;
+    width: inherit;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    font-family: "Montserrat", sans-serif !important;
+    color: $primary-color;
+
+    input {
+      border: $primary-color;
+    }
+  }
+}

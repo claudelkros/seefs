@@ -1,0 +1,15 @@
+.personalinformation {
+	font-size: 8pt;
+	padding: 10px 30px;
+
+	&__bloc {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 5px 0;
+		.bloc__title {
+		}
+		.bloc__form {
+		}
+	}
+}

@@ -1,0 +1,23 @@
+@import "../../../../styles/variables.scss";
+
+.file {
+	display: flex;
+	align-items: center;
+	padding: 5px 0;
+	width: 185px;
+	justify-content: space-between;
+	cursor: pointer;
+	&__name {
+		margin-left: $space * 0.75;
+	}
+
+	&__icon {
+		color: $primary-color;
+		cursor: pointer;
+		line-height: 0;
+
+		.download {
+			font-size: $icon-size * 0.65;
+		}
+	}
+}

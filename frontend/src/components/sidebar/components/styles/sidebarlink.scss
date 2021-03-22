@@ -1,0 +1,53 @@
+@import "../../../../styles/variables.scss";
+
+.sidebarlink {
+  position: relative;
+  padding-top: $space * 0.75;
+  cursor: pointer;
+  &__content {
+    display: flex;
+    .content__icon {
+      font-size: $icon-size * 0.75;
+    }
+    .content__text {
+      font-size: $heading-3;
+      margin-left: $icon-text-spacing * 2.5;
+    }
+  }
+}
+
+.sidebarlink:hover {
+  font-weight: 600;
+}
+
+.selected {
+  .sidebarlink {
+    position: relative;
+    padding-top: $space * 0.75;
+    cursor: pointer;
+    &__content {
+      display: flex;
+      .content__icon {
+        font-size: $icon-size * 0.75;
+      }
+      .content__text {
+        font-size: $heading-3;
+        margin-left: $icon-text-spacing * 2.5;
+        font-weight: 600;
+      }
+    }
+  }
+  .sidebarlink::after {
+    content: "sjd";
+    position: absolute;
+    left: -15px;
+    top: 15px;
+    right: 0;
+    bottom: 0;
+    width: 150px;
+    background-color: $white;
+    opacity: 0.2;
+    padding: 15px 10px;
+    border-radius: $border-radius;
+  }
+}

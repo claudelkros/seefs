@@ -1,0 +1,52 @@
+@import "../../../../styles/variables.scss";
+
+.search {
+  position: relative;
+  .search__field {
+    position: relative;
+    height: 37px;
+    padding: 15px 15px 15px 45px;
+    width: 520px;
+    border-radius: $border-radius;
+    border: 1px solid $primary-color;
+    background-color: $background-color;
+    font-size: $heading-3 * 1.05;
+    font-family: "Montserrat";
+  }
+
+  .search__field:focus {
+    outline: none !important;
+    border: 1px solid $primary-color;
+    box-shadow: 0 0 2px $primary-color;
+  }
+  .search__field::placeholder {
+    font-family: "Montserrat";
+    color: $primary-color;
+    opacity: 0.5;
+    font-size: $heading-3 * 0.9;
+  }
+  .search__icon {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    bottom: 0;
+    font-size: $icon-size * 0.9;
+    color: $primary-color;
+    opacity: 0.5;
+  }
+
+  .search__btn {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 37px;
+    font-size: $icon-size;
+    color: $white;
+    font-size: $heading-3 * 0.9;
+    background-color: $primary-color;
+    padding: 5px 15px;
+    border-radius: 0 $border-radius $border-radius 0;
+  }
+}

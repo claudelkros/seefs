@@ -1,0 +1,64 @@
+.academic {
+	font-size: 8pt;
+	&__title {
+		padding-left: 30px;
+	}
+
+	&__subtitle {
+		padding-left: 60px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+	&__table {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		table,
+		th,
+		td {
+			border: 1px solid black;
+			border-collapse: collapse;
+			text-align: center;
+
+			.registrationYear {
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+				.niveau,
+				.semestre1,
+				.semestre2 {
+					margin-top: 2px;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+
+					p {
+						padding: 0;
+						margin: 0;
+						display: flex;
+						align-items: center;
+					}
+				}
+			}
+		}
+
+		td {
+			padding: 5px;
+		}
+
+		th {
+			width: 150px;
+		}
+
+		.big {
+			width: 400px;
+		}
+
+		.header {
+			padding: 0;
+			display: flex;
+			flex-direction: column;
+		}
+	}
+}

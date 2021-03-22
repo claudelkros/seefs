@@ -1,0 +1,13 @@
+@import "../../../../styles/variables.scss";
+
+.notification {
+  cursor: pointer;
+  height: fit-content;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+  &__icon {
+    font-size: $icon-size * 1.5;
+    color: $primary-color;
+  }
+}

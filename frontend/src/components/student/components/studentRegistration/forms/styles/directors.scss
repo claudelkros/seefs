@@ -1,0 +1,42 @@
+.directors {
+	font-size: 8pt;
+	padding: 0 30px;
+
+	&__bloc {
+		.bloc__content {
+			.content__1 {
+				padding: 5px 0;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+
+				table,
+				th,
+				td {
+					border: 1px solid black;
+					border-collapse: collapse;
+					margin: auto;
+				}
+				td,
+				th {
+					height: 130px;
+					text-align: center;
+					padding: 10px;
+					p {
+						margin-top: -30px;
+						padding: 0;
+					}
+				}
+			}
+
+			.content__text {
+				padding: 10px 60px;
+				line-height: 1.6em;
+
+				.list {
+					padding: 0px 30px;
+				}
+			}
+		}
+	}
+}

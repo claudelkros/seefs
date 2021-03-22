@@ -1,0 +1,30 @@
+.formtitle {
+	margin-top: 15px;
+	text-align: center;
+
+	&__year {
+		font-size: 10pt;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		b {
+			display: flex;
+			align-items: center;
+		}
+	}
+	&__type {
+		.maintitle {
+			font-size: 10pt;
+		}
+
+		.secondtitle {
+			em {
+				font-size: 10pt;
+			}
+		}
+
+		.caption {
+			font-size: 8pt;
+		}
+	}
+}

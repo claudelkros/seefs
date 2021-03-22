@@ -1,0 +1,35 @@
+.formheader {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 1rem;
+
+	&__bloc1,
+	&__bloc2,
+	&__bloc3 {
+		padding: 8pt;
+		border: 1px solid black;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 95px;
+		width: 100%;
+		align-items: center;
+		text-align: center;
+
+		.header1 {
+			font-size: 8pt;
+		}
+
+		.header2 {
+			font-size: 8pt;
+		}
+	}
+
+	&__bloc2 {
+		border-width: 1px 0 1px 0;
+		width: 50%;
+		img {
+			width: 35px;
+		}
+	}
+}

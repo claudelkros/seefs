@@ -1,0 +1,30 @@
+.inputField {
+    height: 10px;
+    font-size: 8pt;
+    // width: 550px;
+    margin-top: -7px;
+    text-transform: uppercase;
+
+    .MuiInput-underline:before {
+            border-bottom-style: dashed !important;
+            border-bottom-width: 0.3px;
+        }
+        .MuiInput-underline:after {
+            border-bottom-style: dashed !important;
+            border-bottom-width: 0.3px;
+        }
+
+        .MuiInput-underline:hover:not(.Mui-disabled):before {
+    border-bottom: 0.3px solid rgba(0, 0, 0, 0.87);
+}
+
+    .MuiInputBase-root {
+        font-size: 8pt;
+        width: inherit;
+        
+        input {
+            padding: 0 0 2px 0;
+            
+        }
+    }
+}
