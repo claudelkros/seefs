@@ -17,7 +17,7 @@ services:
       - metricsdb
   
   metrics_client:
-    build: ./client
+    build: ./frontend
     container_name: metrics-client
     restart: unless-stopped
     environment:
