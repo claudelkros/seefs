@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   seefs_backend:
-    container_name: metrics_backend
+    container_name: seefs_backend
     restart: unless-stopped
     build: ./server
     expose:
@@ -18,7 +18,7 @@ services:
   
   seefs_client:
     build: ./frontend
-    container_name: metrics-client
+    container_name: seefs_client
     restart: unless-stopped
     environment:
       - VIRTUAL_HOST=${WEB_HOST}
@@ -32,7 +32,7 @@ services:
       - 443
       - 3000
   seefsdb:
-    container_name: metricsdb
+    container_name: seefsdb
     image: mongo
     restart: unless-stopped
     environment:
