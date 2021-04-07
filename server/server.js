@@ -54,7 +54,7 @@ app.get("/swagger.json", function (req, res) {
 
 app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
-const uri = process.env.MONGO_URI;
+const uri = process.env.MONGO_PROD;
 
 mongoose.connect(uri, {
 	useNewUrlParser: true,
