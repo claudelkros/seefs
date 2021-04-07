@@ -1,57 +1,51 @@
 version: '3.7'
 
 services:
-  seefs_backend:
-    container_name: seefs_backend
+  metrics_backend:
+    container_name: metrics_backend
     restart: unless-stopped
-    build: ./backend
-    ports:
-      - '7000:7000'
+    build: ./server
+    expose:
+      - 5000
+    env_file: ./server/.env
     environment:
-      - NODE_ENV=production
-    # networks:
-    #   - internal
-    depends_on:
-      - seefsdb
-
-  seefs_frontend:
-    container_name: seefs_frontend
-    restart: unless-stopped
-    build: ./frontend
-    environment:
-      - NODE_PATH=/app/src
-      - VIRTUAL_PORT=3005
-      - VIRTUAL_HOST=seefs.miraclesti.com
-      - LETSENCRYPT_HOST=seefs.miraclesti.com
+      - VIRTUAL_HOST=${VIRTUAL_HOST}
+      - LETSENCRYPT_HOST=${VIRTUAL_HOST}
       - LETSENCRYPT_EMAIL=admin@miraclesti.com
-    # expose:
-    #   - 80
-    #   - 443
-    #   - 3000
-    ports: 
-    - '3005:80'
+      - VIRTUAL_PORT=5000
     depends_on:
-      - seefs_backend
-    # networks:
-    #   - internal
-
-  seefsdb:
-    container_name: seefsdb
+      - metricsdb
+  
+  metrics_client:
+    build: ./client
+    container_name: metrics-client
+    restart: unless-stopped
+    environment:
+      - VIRTUAL_HOST=${WEB_HOST}
+      - LETSENCRYPT_HOST=${WEB_HOST}
+      - LETSENCRYPT_EMAIL=admin@miraclesti.com
+      - VIRTUAL_PORT=3000
+    volumes:
+      - ./client/:/usr/src/app
+    expose:
+      - 80
+      - 443
+      - 3000
+  metricsdb:
+    container_name: metricsdb
     image: mongo
     restart: unless-stopped
     environment:
-      MONGO_INITDB_DATABASE: seefs
-    ports:
-      - '27017:27017'
+      MONGO_INITDB_DATABASE: iot_metrics
     volumes:
-      - seefs_data:/data/db
-      - seefs_config:/data/configdb
+      - mongo_data:/data/db
+      - mongo_config:/data/configdb
+      
+volumes:
+  mongo_data: {}
+  mongo_config: {}
 
 networks:
   default:
     external: 
       name: nginx-proxy
-
-volumes:
-  seefs_data: {}
-  seefs_config: {}

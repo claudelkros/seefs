@@ -15,9 +15,7 @@ export default function HomeView() {
 		<div className="home">
 			Home
 			<div className="home__content"></div>
-			<div className="home__upload">
-				<FileUpload />
-			</div>
+			<div className="home__upload">{/* <FileUpload /> */}</div>
 		</div>
 	);
 }

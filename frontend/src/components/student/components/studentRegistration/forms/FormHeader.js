@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles/formheader.scss";
 import Univ from "../../../../../assets/Images/unnamed.png";
-import Fs from "../../../../../assets/";
+import Fs from "../../../../../assets/Images/logo.png";
 
 export default function FormHeader() {
 	return (
@@ -29,7 +29,7 @@ export default function FormHeader() {
 					<img src={Univ} alt="Logo univ" />
 				</div>
 				<div className="logo2">
-					<img src={Fs} alt="Logo univ" />
+					<img src={Fs} alt="Logo FS" />
 				</div>
 			</div>
 			<div className="formheader__bloc3">

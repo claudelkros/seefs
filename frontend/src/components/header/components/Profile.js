@@ -1,68 +1,73 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import './styles/profile.scss'
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import { useDispatch, useSelector } from 'react-redux';
-import { logout } from '../../../redux/actions/authActions';
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
-import { toggleCloseProfile, toggleOpenProfile } from '../../../redux/actions/utilsActions'
+import React from "react";
+import { Link, useHistory } from "react-router-dom";
+import "./styles/profile.scss";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../../redux/actions/authActions";
+import ClickAwayListener from "@material-ui/core/ClickAwayListener";
+import {
+	toggleCloseProfile,
+	toggleOpenProfile,
+} from "../../../redux/actions/utilsActions";
 
 export default function Profile() {
+	// Connecting to the store
+	const toggleValue = useSelector((state) => state.utils.toggleProfile);
 
-    // Connecting to the store
-    const toggleValue = useSelector(state => state.utils.toggleProfile)
+	const { push } = useHistory();
+	const dispatch = useDispatch();
 
+	// Logout action
+	const handleLogout = () => {
+		dispatch(logout());
+		push("/");
+	};
 
-    const dispatch = useDispatch()
+	// Onclick away actions
 
+	const handleClickAway = () => {
+		dispatch(toggleCloseProfile());
+	};
 
-    // Logout action
-    const handleLogout = () => {
-        dispatch(logout())
-    }
+	// TOGGLE ACTION
+	const handleClick = (e) => {
+		dispatch(toggleOpenProfile());
+	};
 
-    // Onclick away actions
+	return (
+		<ClickAwayListener onClickAway={handleClickAway}>
+			<div className="profile" onClick={(e) => handleClick(e)}>
+				{toggleValue ? (
+					<div className="profile__content">
+						<div className="content__item">
+							<div className="item__wrapper">
+								<AccountCircleIcon className="icon first" />
 
-    const handleClickAway = () => {
-        dispatch(toggleCloseProfile());
-    };
+								<Link to="profile">
+									<span className="text--first">
+										Mon compte
+									</span>
+								</Link>
+							</div>
+						</div>
 
-    // TOGGLE ACTION
-    const handleClick = (e) => {
-        dispatch(toggleOpenProfile())
-    };
-
-
-
-    return (
-        <ClickAwayListener onClickAway={handleClickAway}>
-            <div className="profile" onClick={e => handleClick(e)}>
-                {toggleValue ? <div className="profile__content">
-                    <div className="content__item">
-                        <div className="item__wrapper">
-                            <AccountCircleIcon className="icon first" />
-
-                            <Link to="profile" >
-                                <span className="text--first">
-                                    Mon compte
-                        </span>
-                            </Link>
-                        </div>
-
-                    </div>
-
-                    <div className="content__item">
-                        <div className="item__wrapper">
-                            <ExitToAppIcon className="icon second" />
-                            <span className="text--second" onClick={e => handleLogout()}>
-                                Se deconnecter
-                       </span>
-                        </div>
-                    </div>
-
-                </div> : ''
-                }            </div>
-        </ClickAwayListener>
-    )
+						<div className="content__item">
+							<div className="item__wrapper">
+								<ExitToAppIcon className="icon second" />
+								<span
+									className="text--second"
+									onClick={(e) => handleLogout()}
+								>
+									Se deconnecter
+								</span>
+							</div>
+						</div>
+					</div>
+				) : (
+					""
+				)}{" "}
+			</div>
+		</ClickAwayListener>
+	);
 }

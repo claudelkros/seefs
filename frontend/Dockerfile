@@ -1,39 +1,26 @@
-FROM node:12.2.0-alpine as build
+# Step 1
+FROM node:10-alpine as build-step
 
-# USER node
-# Working directory inside the container
+RUN mkdir /app
+
 WORKDIR /app
 
-ENV PATH /app/node_modules/.bin:$PATH
+COPY package*.json /app/
 
-# Copy over the package.json files
-#COPY ./package*.json /app/
+RUN npm install
 
-COPY . /app/
+COPY . /app
 
-# Install dependencies
-RUN npm install --silent
-
-RUN npm install react-scripts -g --silent
-
-# COPY --chown=node . .
-# Copy everything
-
-
-# Build the application
 RUN npm run build
 
-# Build nginx server
-FROM nginx:1.16.0-alpine
+# # Stage 2
+# FROM nginx:1.17.1-alpine
 
-# ENV HOST=0.0.0.0 PORT=3000
+# COPY --from=build-step /app/build /usr/share/nginx/html
+ENV PORT=3000
 
-# Copy all the contents from the build directory into the web root
-COPY --from=build /app/build/ /var/www/html
+RUN npm install -g serve
 
-COPY nginx/default.conf /etc/nginx/conf.d
+EXPOSE 3000
 
-EXPOSE 80
-
-# CMD ["npm", "run", "start"]
-CMD ["nginx", "-g", "daemon off;"]
+CMD [ "serve", "-s", "build", "-l", "3000" ]
