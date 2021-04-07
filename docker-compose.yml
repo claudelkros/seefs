@@ -1,7 +1,7 @@
 version: '3.7'
 
 services:
-  metrics_backend:
+  seefs_backend:
     container_name: metrics_backend
     restart: unless-stopped
     build: ./server
@@ -14,9 +14,9 @@ services:
       - LETSENCRYPT_EMAIL=admin@miraclesti.com
       - VIRTUAL_PORT=5000
     depends_on:
-      - metricsdb
+      - seefsdb
   
-  metrics_client:
+  seefs_client:
     build: ./frontend
     container_name: metrics-client
     restart: unless-stopped
@@ -31,12 +31,12 @@ services:
       - 80
       - 443
       - 3000
-  metricsdb:
+  seefsdb:
     container_name: metricsdb
     image: mongo
     restart: unless-stopped
     environment:
-      MONGO_INITDB_DATABASE: iot_metrics
+      MONGO_INITDB_DATABASE: seefs
     volumes:
       - mongo_data:/data/db
       - mongo_config:/data/configdb
